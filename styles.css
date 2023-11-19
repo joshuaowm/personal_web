@@ -8,7 +8,7 @@
 }
 
 :root{
-    --bg-color: rgb(20, 20, 20);
+    --bg-color: #141414;
     --text-color: #fff;
     --main-color: #C8102E;
     --big-font: 7rem;
@@ -348,4 +348,36 @@ section {
 
 .contacts a:hover {
     color: var(--main-color);
+}
+
+ul li ul.dropdown li {
+    display: block;
+    padding-top: 10px;
+}
+
+ul li ul.dropdown {
+    display: none;
+    width: 100%;
+    background: var(--bg-color);
+    position: absolute;
+    z-index: 999;
+}
+
+ul li a:hover {
+    background: var(--bg-color);
+} 
+
+ul li:hover ul.dropdown {
+    display: block;
+    padding-top: 5px;
+}
+
+.cpage .contacts h1 {
+    color: var(--text-color);
+    font-size: 73px; 
+    font-weight: bold; 
+    background: linear-gradient(45deg, var(--main-color), var(--text-color));
+    -webkit-background-clip: text;
+    background-clip: text;  
+    color: transparent;
 }
