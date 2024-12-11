@@ -10,7 +10,7 @@
 :root{
     --bg-color: #141414;
     --text-color: #fff;
-    --main-color: #C8102E;
+    --main-color: #0996E6;
     --big-font: 7rem;
     --p-font:1.1rem;
     --swiper-pagination-color: var(--main-color);
@@ -63,7 +63,7 @@ header {
     border: 1px solid #252525;
     padding: 10px 20px;
     border-radius: 100px;
-    display: flex;
+    display: none;
     align-items: center;
     cursor: pointer;
     font-weight: bold;
@@ -116,12 +116,18 @@ section {
     margin: 23px 0;
 }
 
+.home-text h2{
+    font-size: 30px;
+    margin: 23px 0;
+    margin-bottom: 5px;
+}
+
 .home-text p{
     font-size: var(--p-font);
     font-weight: 400;
     color: #c3c3c3;
     line-height: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
 }
 
 .btn {
@@ -274,6 +280,9 @@ section {
     }
     .navbar.open {
         left: 0;
+    }
+    .menu-btn { 
+        display: flex; /* Show on mobile devices */
     }
 }
 
