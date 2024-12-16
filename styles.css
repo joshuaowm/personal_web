@@ -245,6 +245,7 @@ section {
     }
     .home-img {
         margin: auto;
+        margin-top: 25px;
         height: auto;
         width: auto;
     }
