@@ -71,8 +71,8 @@ header {
 
 #menu-icon {
     font-size: 28px;
-    margin-left: 10px;
-    z-index: 6;
+    margin-left: 0px;
+    z-index: 0;
 }
 
 section {
@@ -83,10 +83,15 @@ section {
     position: relative;
     width: 100%;
     height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 30px;
+}
+
+.portfolio-page .home {
+    flex-direction: column;
 }
 
 .home-img {
@@ -179,6 +184,14 @@ section {
     color: var(--main-color);
 }
 
+.logo {
+    display: block;
+    width: 40%;          /* default for large screens */
+    height: auto;
+    object-fit: contain;
+    transition: width 0.3s ease;
+}
+
 @media (max-width: 1850px) {
     header {
         padding: 15px 8%;
@@ -223,6 +236,10 @@ section {
         --p-font: 1rem;
         transition: .2s;
     }
+    .logo {
+        width: 50%;
+        max-width: 70%;
+    }
 }
 
 @media (max-width: 950px) {
@@ -234,7 +251,7 @@ section {
     }
     header {
         padding: 11px 4%;
-        background: #2d2d2d;
+        background: var(--bg-color);
     }
     .home {
         height: auto;
@@ -251,40 +268,67 @@ section {
         width: auto;
     }
     .home-img img {
-        max-width: 450px;
+        max-width: 350px;
         width: 100%;
         height: auto;
     }
+    .logo {
+        width: 55%;
+        max-width: 70%;
+    }
+
 }
 
 @media (max-width: 850px) {
+    header {
+        background: transparent;
+    }
     .navbar {
         position: absolute;
-        width: 100%;
+        width: 50%;
         height: 100vh;
         padding: 40px 50px;
         top: 0;
         right: 0;
         bottom: 0;
-        left: 100%;
+        left: auto;
+        transform: translateX(100%);
         display: flex;
         flex-direction: column;
-        background: #fff;
-        transition: all 0.4s ease-in-out;
+        background: rgb(255, 255, 255);
+        transition: transform 0.4s ease-in-out;
+        box-shadow: -2px 0 20px rgba(0,0,0,0.1);
+
     }
     .navbar a {
         display: block;
-        color: #c3c3c3;
+        color: #c2c2c2;
         padding: 0px;
         margin: 0px 0px 40px 0px;
         font-size: 2rem;
         font-weight: 400;
     }
     .navbar.open {
-        left: 0;
+        transform: translateX(0);
     }
-    .menu-btn { 
-        display: flex; /* Show on mobile devices */
+    .menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;            /* make it square */
+        height: 50px;
+        border-radius: 50%;     /* optional — makes it circular */
+        cursor: pointer;
+        color: #000;
+        background: linear-gradient(130.08deg, var(--main-color) 0%, #ffffff 100%);
+        box-shadow: 0px 20px 40px #1f1f1f70;
+        border: none;
+        position: relative;
+        z-index: 1001;          
+    }
+    .logo {
+        width: 70%;
+        max-width: 90%;
     }
 }
 
@@ -305,11 +349,9 @@ section {
     margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
-    .swiper-button-next {
-        color: var(--main-color);
-    }
+    .swiper-button-next,
     .swiper-button-prev {
-        color: var(--main-color);
+        color: rgba(0, 0, 0, 0.3);
     }
 }
 
@@ -318,6 +360,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .swiper-slide img {
@@ -325,6 +368,7 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 12px;
 }
 
 .cpage {
