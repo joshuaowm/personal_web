@@ -92,6 +92,7 @@ section {
 
 .portfolio-page .home {
     flex-direction: column;
+    padding-top: 2vh;
 }
 
 .home-img {
